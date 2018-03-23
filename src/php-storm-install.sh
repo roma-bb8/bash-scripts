@@ -8,17 +8,17 @@ sudo apt-get update
 sudo apt-get install oracle-java8-installer -y
 sudo apt-get install oracle-java8-set-default -y
 
-sudo mkdir -pv /usr/local/software/phpStorm
-cd /usr/local/software/phpStorm
+sudo mkdir -pv /opt/phpStorm
+cd /opt/phpStorm
 
 sudo wget http://download-cf.jetbrains.com/webide/PhpStorm-2017.3.6.tar.gz
 
-sudo tar -xvf /usr/local/software/phpStorm/PhpStorm-2017.3.6.tar.gz
+sudo tar -xvf /opt/phpStorm/PhpStorm-2017.3.6.tar.gz
 
-sudo mv /usr/local/software/phpStorm/PhpStorm-*/* /usr/local/software/phpStorm/
+sudo mv /opt/phpStorm/PhpStorm-*/* /opt/phpStorm/
 
-sudo rm -R /usr/local/software/phpStorm/PhpStorm-*
+sudo rm -R /opt/phpStorm/PhpStorm-*
 
-ln -s /usr/local/software/phpStorm/bin/phpstorm.sh /usr/local/bin/phpStorm
+ln -s /opt/phpStorm/bin/phpstorm.sh /usr/local/bin/phpStorm
 
 phpStorm
