@@ -1,29 +1,18 @@
 #!/usr/bin/env bash
-mysql -um2e -p1qwerty2
+
+/usr/local/mysql/bin/mysql -um2e -p1qwerty2 <<MY_SQL_SCRIPT
 DROP DATABASE IF EXISTS `server_admin_panel_general`;
 CREATE DATABASE IF NOT EXISTS `server_admin_panel_general` CHARACTER SET UTF8 COLLATE utf8_general_ci;
+MY_SQL_SCRIPT
 
-######################################## Server Admin Panel General Install ########################################
-#db             admin 1qwerty2 server_admin_panel_general
-# checkout)
-# create config
-# composer install
-# install table database
+sudo mkdir -p /var/www/server_admin_panel_general
 
-#url            http://server-admin-panel-general.local/public/index.php
+echo 'db:           127.0.0.1'
+echo 'db_name:      server_admin_panel_general'
+echo 'user:         m2e'
+echo 'password:     1qwerty2'
 
-# Кроны
-
-# crontab -e
-# ----------------------------------------
-# SHELL=/src/bash
-# MAILTO=m2e
-# * * * * * php -f /var/www/server_worker/public/cron.php
-# * * * * * php -f /var/www/magento_1/cron.php
-# * * * * * /var/www/magento_2/src/magento cron:run
-# ----------------------------------------
-# crontab -l
-
-# while true; do php -f /var/www/server_worker/public/cron.php; echo -e  '\n--------------------------------------------------------------------------------'; sleep 60; done;
-# while true; do php -f /var/www/magento_1/cron.php;            echo -e  '\n--------------------------------------------------------------------------------'; sleep 60; done;
-# while true; do /var/www/magento_2/src/magento cron:run        echo -e  '\n--------------------------------------------------------------------------------'; sleep 60; done;
+echo 'Checkout from svn server_admin_panel_general'
+echo 'Create config'
+echo 'composer install'
+echo 'Install table in database'
