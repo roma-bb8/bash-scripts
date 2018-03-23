@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-
+mysql -um2e -p1qwerty2
+DROP DATABASE IF EXISTS `magento_2`;
+CREATE DATABASE IF NOT EXISTS `magento_2` CHARACTER SET UTF8 COLLATE utf8_general_ci;
 ######################################## Magento 2 Install ########################################
 cd /var/www
 composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition magento_2
