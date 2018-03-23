@@ -4,7 +4,7 @@ sudo apt-get update
 
 sudo apt-get install php-xdebug -y
 
-PHP_STORM=PHP_STORM
+PHP_STORM=PHPSTORM
 
 sudo echo "XDEBUG_CONFIG=idekey=${PHP_STORM}"   >> ~/.profile
 
