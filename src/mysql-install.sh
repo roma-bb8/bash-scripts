@@ -14,11 +14,11 @@ systemctl status mysql.service
 SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
 
 CREATE USER 'm2e'@'localhost' IDENTIFIED BY '1qwerty2';
-GRANT CREATE, SELECT, INSERT, UPDATE, DELETE, DROP ON * . * TO 'm2e'@'localhost';
+GRANT ALL PRIVILEGES ON * . * TO 'm2e'@'localhost';
 
 FLUSH PRIVILEGES;
 MY_SQL_SCRIPT
 
-# GRANT ALL PRIVILEGES ON * . * TO 'm2e'@'localhost';
+# GRANT CREATE, SELECT, INSERT, UPDATE, DELETE, DROP ON * . * TO 'm2e'@'localhost';
 # REVOKE ALL PRIVILEGES ON *.* FROM 'm2e'@'localhost';
 # DROP USER 'm2e'@'localhost';

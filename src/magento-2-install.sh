@@ -40,6 +40,7 @@ bin/magento cron:run
 
 echo '#1 Checkout from svn m2epro_magento_2'
 echo '#2 bin/magento module:enable Ess_M2ePro'
+echo '#3 bin/magento setup:upgrade'
 
 echo 'Crone'
 echo 'crontab -e'

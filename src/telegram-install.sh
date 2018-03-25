@@ -6,6 +6,6 @@ sudo apt-get update
 
 sudo apt-get install telegram
 
-ln -s /opt/telegram/telegram /usr/local/bin/telegram
+sudo ln -s /opt/telegram/telegram /usr/local/bin/telegram
 
 telegram

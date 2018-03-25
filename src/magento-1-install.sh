@@ -38,8 +38,8 @@ echo '#1 System -> Configuration -> Admin [Section] -> Security [Section] -> Ena
 echo '#2 Checkout from svn m2epro_magento_1'
 echo '#3 Clean all cache'
 
-ln -s /var/www/magento_1/misc/additional_scripts/upgrade_database.php /var/www/magento_1/updb.php
-ln -s /var/www/magento_1/misc/additional_scripts/upgrade_upgrade.php /var/www/magento_1/up.php
+sudo ln -s /var/www/magento_1/misc/additional_scripts/upgrade_database.php /var/www/magento_1/upgrade_database.php
+sudo ln -s /var/www/magento_1/misc/additional_scripts/upgrade_upgrade.php /var/www/magento_1/upgrade_upgrade.php
 
 echo 'Crone'
 echo 'crontab -e'

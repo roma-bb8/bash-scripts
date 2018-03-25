@@ -3,6 +3,10 @@
 /usr/local/mysql/bin/mysql -um2e -p1qwerty2 <<MY_SQL_SCRIPT
 DROP DATABASE IF EXISTS `server_worker`;
 CREATE DATABASE IF NOT EXISTS `server_worker` CHARACTER SET UTF8 COLLATE utf8_general_ci;
+CREATE USER 'default'@'trigger' IDENTIFIED BY '';
+GRANT TRIGGER, UPDATE ON * . * TO 'default'@'trigger';
+
+FLUSH PRIVILEGES;
 MY_SQL_SCRIPT
 
 sudo mkdir -p /var/www/server_worker

@@ -19,6 +19,6 @@ sudo mv /opt/phpStorm/PhpStorm-*/* /opt/phpStorm/
 
 sudo rm -R /opt/phpStorm/PhpStorm-*
 
-ln -s /opt/phpStorm/bin/phpstorm.sh /usr/local/bin/phpStorm
+sudo ln -s /opt/phpStorm/bin/phpstorm.sh /usr/local/bin/phpStorm
 
 phpStorm
