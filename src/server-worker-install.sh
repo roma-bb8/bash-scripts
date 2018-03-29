@@ -33,3 +33,18 @@ echo '* * * * * php -f /var/www/server_worker/public/cron.php';
 echo 'crontab -l';
 echo 'OR';
 echo 'while true; do php -f /var/www/server_worker/public/cron.php; echo -e  '\n----------------------------------------'; sleep 60; done;';
+
+cat > /var/www/server_worker/.htaccess <<EOF
+<IfModule mod_rewrite.c>
+
+    RewriteEngine On
+
+    RewriteBase /
+
+    RewriteCond %{THE_REQUEST} /public/([^\s?]*) [NC]
+    RewriteRule ^ %1 [L,NE,R=302]
+
+    RewriteRule ^((?!public/).*)$ public/$1 [L,NC]
+
+</IfModule>
+EOF

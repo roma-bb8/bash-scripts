@@ -16,3 +16,18 @@ echo 'Checkout from svn server_admin_panel_general'
 echo 'Create config'
 echo 'composer install'
 echo 'Install table in database'
+
+cat > /var/www/server_worker/.htaccess <<EOF
+<IfModule mod_rewrite.c>
+
+    RewriteEngine On
+
+    RewriteBase /
+
+    RewriteCond %{THE_REQUEST} /public/([^\s?]*) [NC]
+    RewriteRule ^ %1 [L,NE,R=302]
+
+    RewriteRule ^((?!public/).*)$ public/$1 [L,NC]
+
+</IfModule>
+EOF
