@@ -12,6 +12,7 @@ systemctl status mysql.service
 /usr/local/mysql/bin/mysql -uroot -ptoor <<MY_SQL_SCRIPT
 
 SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
+# SET GLOBAL sql_mode=''
 
 CREATE USER 'm2e'@'localhost' IDENTIFIED BY '1qwerty2';
 GRANT ALL PRIVILEGES ON * . * TO 'm2e'@'localhost';
