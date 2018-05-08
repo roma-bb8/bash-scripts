@@ -47,3 +47,4 @@ echo '* * * * * php -f /var/www/magento_1/cron.php';
 echo 'crontab -l';
 echo 'OR';
 echo 'while true; do php -f /var/www/magento_1/cron.php; echo -e  '\n----------------------------------------'; sleep 60; done;';
+# app/code/core/Mage/Core/Controller/Varien/Action.php 418 <- Point alls controller run.
