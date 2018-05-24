@@ -33,6 +33,7 @@ bin/magento setup:install \
 bin/magento sampledata:deploy
 bin/magento setup:upgrade
 bin/magento deploy:mode:set developer
+bin/magento setup:config:set --backend-frontname="admin"
 
 bin/magento module:disable Shopial_Facebook
 
