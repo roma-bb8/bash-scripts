@@ -32,6 +32,13 @@ bin/magento setup:install \
 
 bin/magento setup:config:set --backend-frontname="admin"
 bin/magento sampledata:deploy
+########################################
+
+# Magento
+# fcb9f05baeca24d7fc657a425096c109
+# bffab2f0cef2efe250eb6c62f6cf8e21
+
+########################################
 bin/magento setup:upgrade
 bin/magento deploy:mode:set developer
 
