@@ -4,7 +4,7 @@
 # $2 = site_dir
 # $3 = site_ip_address
 
-sudo echo "${3}     ${1}.local" >> /etc/hosts
+sudo echo "${3}     ${1}.local     www.${1}.local" >> /etc/hosts
 
 sudo mkdir -p /var/www/${2}
 sudo touch /etc/apache2/sites-available/${1}.local.conf

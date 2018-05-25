@@ -5,9 +5,15 @@ DROP DATABASE IF EXISTS `magento_2`;
 CREATE DATABASE IF NOT EXISTS `magento_2` CHARACTER SET UTF8 COLLATE utf8_general_ci;
 MY_SQL_SCRIPT
 
-sudo mkdir -p /var/www/magento_2
+sudo mkdir -p ~/Projects/magento_2
+cd ~/Projects
 
-cd /var/www
+##################################################
+######### CREDENTIALS FOR MAGENTO ACCOUNT ########
+##################################################
+# Login:    fcb9f05baeca24d7fc657a425096c109 #####
+# Password: bffab2f0cef2efe250eb6c62f6cf8e21 #####
+##################################################
 
 sudo composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition magento_2
 
@@ -32,13 +38,6 @@ bin/magento setup:install \
 
 bin/magento setup:config:set --backend-frontname="admin"
 bin/magento sampledata:deploy
-########################################
-
-# Magento
-# fcb9f05baeca24d7fc657a425096c109
-# bffab2f0cef2efe250eb6c62f6cf8e21
-
-########################################
 bin/magento setup:upgrade
 bin/magento deploy:mode:set developer
 
@@ -46,14 +45,18 @@ bin/magento module:disable Shopial_Facebook
 
 bin/magento cron:run
 
-echo '#1 Checkout from svn m2epro_magento_2'
-echo '#2 bin/magento module:enable Ess_M2ePro'
-echo '#3 bin/magento setup:upgrade'
-echo '#4 bin/magento setup:di:compile'
+#######################################
 
-echo 'Crone'
-echo 'crontab -e'
-echo '* * * * * /var/www/magento_2/src/magento cron:run'
-echo 'crontab -l';
-echo 'OR';
-echo "while true; do /var/www/magento_2/src/magento cron:run; echo -e  '\n----------------------------------------'; sleep 60; done;";
+echo "#1 Checkout from svn m2epro_magento_2"
+echo "#2 bin/magento module:enable Ess_M2ePro"
+echo "#3 bin/magento setup:upgrade"
+echo "#4 bin/magento setup:di:compile"
+
+#######################################
+
+echo "Crone"
+echo "crontab -e"
+echo "* * * * * ~/Projects/magento_2/bin/magento cron:run"
+echo "crontab -l";
+echo "OR";
+echo "while true; do ~/Projects/magento_2/bin/magento cron:run; echo -e  "\n----------------------------------------"; sleep 60; done;";
