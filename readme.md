@@ -1,4 +1,3 @@
-# Xubuntu post install scripts
+# Xubuntu scripts
 
-### root    =>  toor
-### $USER   =>  1qwerty2
+Useful post install scripts.

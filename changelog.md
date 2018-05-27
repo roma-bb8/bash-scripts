@@ -1,5 +1,5 @@
-# Changelog for m2e OS
+# Changelog
 
-#### 1.0 / XXXX-XX-XX
+#### 1.0 / 2018-05-27
 
 * Initial Release.
