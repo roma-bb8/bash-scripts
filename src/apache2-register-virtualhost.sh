@@ -6,11 +6,11 @@
 
 sudo echo "${3}     ${1}.local     www.${1}.local" >> /etc/hosts
 
-sudo mkdir -p /var/www/${2}
+sudo mkdir -p ${2}
 sudo touch /etc/apache2/sites-available/${1}.local.conf
 
 sudo cat > /etc/apache2/sites-available/${1}.local.conf <<EOF
-<Directory /var/www/${2}>
+<Directory ${2}>
     Require all granted
 </Directory>
 
@@ -21,12 +21,12 @@ sudo cat > /etc/apache2/sites-available/${1}.local.conf <<EOF
     ServerName ${1}.local
     ServerAlias www.${1}.local
 
-    DocumentRoot /var/www/${2}
+    DocumentRoot ${2}
 
     ErrorLog ${APACHE_LOG_DIR}/error.log
     CustomLog ${APACHE_LOG_DIR}/access.log combined
 
-    <Directory /var/www/${2}>
+    <Directory ${2}>
         Options Indexes FollowSymLinks
         AllowOverride All
     </Directory>
